@@ -1,6 +1,4 @@
 # Privacy-Preserving Patient Similarity Search in Liver Transplant Research
-# Implementation using Federated Learning, Vector Databases & Flower
-# Modified to include liver transplant outcomes
 
 import numpy as np
 import pandas as pd
@@ -20,7 +18,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ================== PATIENT EMBEDDING MODEL ==================
 
 class PatientEmbeddingModel(nn.Module):
     """Neural network to generate patient embeddings for similarity search"""
@@ -49,7 +46,6 @@ class PatientEmbeddingModel(nn.Module):
     def forward(self, x):
         return self.network(x)
 
-# ================== ENHANCED SYNTHETIC PATIENT DATA GENERATOR ==================
 
 class SyntheticPatientDataGenerator:
     """Generate synthetic liver transplant patient data with transplant outcomes"""
@@ -169,7 +165,6 @@ class SyntheticPatientDataGenerator:
         
         return df
 
-# ================== FLOWER CLIENT IMPLEMENTATION ==================
 
 class PatientSimilarityClient(fl.client.NumPyClient):
     """Flower client for federated learning of patient embeddings"""
@@ -264,7 +259,6 @@ class PatientSimilarityClient(fl.client.NumPyClient):
         
         return float(embedding_var), len(self.X), {"embedding_variance": embedding_var}
 
-# ================== ENHANCED IN-MEMORY VECTOR STORAGE ==================
 
 class HospitalVectorStorage:
     """Manages patient embeddings with transplant outcome information"""
@@ -321,7 +315,6 @@ class HospitalVectorStorage:
 # Create alias for compatibility
 HospitalVectorDB = HospitalVectorStorage
 
-# ================== ENHANCED MPC SIMULATION ==================
 
 class SecureMultiPartyComputation:
     """Simplified MPC simulation for secure similarity computation with transplant outcomes"""
@@ -413,7 +406,6 @@ class SecureMultiPartyComputation:
         
         return stats
 
-# ================== ENHANCED MAIN SYSTEM ORCHESTRATOR ==================
 
 class PrivacyPreservingPatientSearch:
     """Main system orchestrating the entire pipeline with transplant outcomes"""
@@ -585,7 +577,6 @@ class PrivacyPreservingPatientSearch:
         
         return torch.FloatTensor(features).unsqueeze(0)
 
-# ================== ENHANCED DEMONSTRATION WORKFLOW ==================
 
 def demonstrate_system():
     """Demonstrate the complete system with transplant outcome analysis"""
@@ -751,7 +742,6 @@ def demonstrate_system():
     
     return system
 
-# ================== MAIN EXECUTION ==================
 
 if __name__ == "__main__":
     # Run the complete demonstration
